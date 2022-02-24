@@ -1,0 +1,11 @@
+{
+  "name": "jscodeshift-learning",
+  "version": "1.0.0",
+  "description": "learning jscodeshift",
+  "scripts": {
+    "test": "jscodeshift -t hello-jscodeshift.js foo.js"
+  },
+  "keywords": ["ull", "ast"],
+  "author": "Casiano Rodriguez Leon <crguezl@ull.edu.es> (https://crguezl.github.io/)",
+  "license": "ISC"
+}
