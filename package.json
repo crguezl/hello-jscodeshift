@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "learning jscodeshift",
   "scripts": {
-    "test": "jscodeshift -t hello-jscodeshift.js foo.js"
+    "test": "jscodeshift -t hello-jscodeshift.js foo.js --chazam 4"
   },
-  "keywords": ["ull", "ast"],
+  "keywords": [
+    "ull",
+    "ast"
+  ],
   "author": "Casiano Rodriguez Leon <crguezl@ull.edu.es> (https://crguezl.github.io/)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "recast": "^0.20.5"
+  }
 }
