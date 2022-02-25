@@ -17,4 +17,4 @@ export const sum = (a, b) => {
   export const average = (a, b) => {
     console.log('calling average with ' + arguments);
     return divide(sum(a, b), 2);
-  };
+  };    
