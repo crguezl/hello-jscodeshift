@@ -1,3 +1,3 @@
-var barChuchu = 4;
-consoleChuchu.logChuchu(barChuchu+barChuchu /* twice foo */);
-consoleChuchu.logChuchu("foo");
+var bar = 4;
+console.log(bar+bar /* twice foo */);
+console.log("foo");

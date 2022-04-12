@@ -1,3 +1,3 @@
-var fooChuchu = 4;
-consoleChuchu.logChuchu(fooChuchu*fooChuchu /* square foo */);
-consoleChuchu.logChuchu("more foo");
+var foo = 4;
+console.log(foo*foo /* square foo */);
+console.log("more foo");
