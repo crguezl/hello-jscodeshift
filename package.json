@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "learning jscodeshift",
   "scripts": {
-    "test": "jscodeshift -t hello-jscodeshift.js foo.js --chazam 4",
+    "test": "jscodeshift -t hello-jscodeshift.js foo*.js --chazam 4",
     "recast": "node --inspect-brk hello-recast.js",
     "console": "jscodeshift -t remove-calls-to-console/remove-consoles.js remove-calls-to-console/remove-consoles-input.js -d -p",
     "deprecated": "jscodeshift -t replacing-imported-method-calls/deprecated.js replacing-imported-method-calls/deprecated-input.js -d -p",

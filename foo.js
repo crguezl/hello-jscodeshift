@@ -1,3 +1,3 @@
-var foo = 4;
-console.log(foo+foo /* twice foo */);
+var bar = 4;
+console.log(bar+bar /* twice foo */);
 console.log("foo");
