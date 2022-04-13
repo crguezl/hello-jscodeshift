@@ -1,5 +1,6 @@
 module.exports = function (fileInfo, api, options) {
-  console.log(options.chazam);
+  console.log("hello world!");
+  debugger;
   return api
     .jscodeshift(fileInfo.source)
     .findVariableDeclarators("foo")
