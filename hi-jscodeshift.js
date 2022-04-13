@@ -1,23 +1,25 @@
+var describe = require('jscodeshift-helper').describe;
+
 module.exports = function (fileInfo, api, options) {
   console.log("hello jscodeshift!");
   debugger;
   console.log("**********************fileInfo**************************");
-  console.log(fileInfo);
+  describe(fileInfo);
   let j = api.jscodeshift;
   let jscColl = j(fileInfo.source);
   console.log("************* jscColl = j(fileInfo.source) *****************");
-  console.log(jscColl);
+  describe(jscColl);
   let callExpAST = j.CallExpression; // Build a CallExpression AST node
   console.log("************* callExpAST = j.CallExpression *****************");
-  console.log(callExpAST);
+  describe(callExpAST);
   let callExpColl = jscColl.find(callExpAST); // Find all CallExpression AST nodes
   console.log("************* callExpColl = jscColl.find(callExpAST) *****************");
-  console.log(callExpColl);
+  describe(callExpColl);
   let removed = callExpColl.remove(); // Remove all CallExpression AST nodes
   console.log("************* removed = callExpColl.remove() *****************");
-  console.log(removed);
+  describe(removed);
   let final = removed.toSource(); // Convert the AST to source code
   console.log("************* final = removed.toSource() *****************");
-  console.log(final);
+  describe(final);
   return final;
 };

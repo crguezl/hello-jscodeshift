@@ -4,7 +4,7 @@
   "description": "learning jscodeshift",
   "scripts": {
     "test": "git restore foo*.js; jscodeshift -t hello-jscodeshift.js foo*.js --chazam 'chazam-value'",
-    "start": "git restore foo*.js; jscodeshift -t hi-jscodeshift.js foo.js",
+    "start": "git restore foo*.js; jscodeshift --run-in-band -d -t hi-jscodeshift.js foo.js",
     "recast": "node --inspect-brk hello-recast.js",
     "console": "jscodeshift -t remove-calls-to-console/remove-consoles.js remove-calls-to-console/remove-consoles-input.js -d -p",
     "deprecated": "jscodeshift -t replacing-imported-method-calls/deprecated.js replacing-imported-method-calls/deprecated-input.js -d -p",
@@ -20,5 +20,8 @@
   "dependencies": {
     "jscodeshift": "^0.13.1",
     "recast": "^0.20.5"
+  },
+  "devDependencies": {
+    "jscodeshift-helper": "^1.1.0"
   }
 }
