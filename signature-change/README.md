@@ -148,7 +148,7 @@ Time elapsed: 0.912seconds
 }
 ```
 
-# AST for `car.factory('white', 'Kia', 'Sorento', 2010, 50000, null, true)`
+## AST for `car.factory('white', 'Kia', 'Sorento', 2010, 50000, null, true)`
 
 ```js
  {
