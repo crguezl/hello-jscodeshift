@@ -1,4 +1,4 @@
-export default (fileInfo, api) => {
+module.exports = function(fileInfo, api) {
     const j = api.jscodeshift;
     const root = j(fileInfo.source);
   
@@ -41,6 +41,8 @@ export default (fileInfo, api) => {
       })
       .replaceWith(nodePath => {
         const { node } = nodePath;
+
+        debugger;
   
         // use a builder to create the ObjectExpression
         const argumentsAsObject = j.objectExpression(
@@ -55,7 +57,7 @@ export default (fileInfo, api) => {
           )
         );
   
-        // replace the arguments with our new ObjectExpression
+        // arguments is now an array with only the ObjectExpression we have built
         node.arguments = [argumentsAsObject];
   
         return node;
