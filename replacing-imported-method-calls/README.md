@@ -20,7 +20,7 @@ How would we know to replace `g.circleArea` instead of `geometry.circleArea`?
 
 run: 
 
-```
+```js
 ➜  replacing-imported-method-calls git:(master) npm run deprecated
 
 > jscodeshift-learning@1.0.0 deprecated
