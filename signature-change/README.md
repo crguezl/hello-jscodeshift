@@ -106,52 +106,152 @@ Time elapsed: 0.912seconds
       })
    ```
 3. Read all arguments being passed in
+   * For all `nodepath` in the collection `factoryCalls` the corresponding AST node in `nodepath.node` has the arguments of the call in its `arguments` property 
 4. Replace that call with a single argument which contains an object with the original values
+   * We have to build the AST for the object
 
 ## AST `import car from 'car';`
 
 ```js
 {
-  "type": "Program",
-  "body": [
+    "type": "ImportDeclaration",
+    "specifiers": [
     {
-      "type": "ImportDeclaration",
-      "specifiers": [
-        {
-          "type": "ImportDefaultSpecifier",
-          "local": {
-            "type": "Identifier",
-            "name": "car",
-            "range": [
-              7,
-              10
-            ]
-          },
-          "range": [
+        "type": "ImportDefaultSpecifier",
+        "local": {
+        "type": "Identifier",
+        "name": "car",
+        "range": [
             7,
             10
-          ]
-        }
-      ],
-      "source": {
-        "type": "Literal",
-        "value": "car",
-        "raw": "'car'",
-        "range": [
-          16,
-          21
         ]
-      },
-      "range": [
-        0,
-        22
-      ]
+        },
+        "range": [
+        7,
+        10
+        ]
     }
-  ],
-  "sourceType": "module",
-  "range": [
+    ],
+    "source": {
+    "type": "Literal",
+    "value": "car",
+    "raw": "'car'",
+    "range": [
+        16,
+        21
+    ]
+    },
+    "range": [
     0,
     22
-  ]
+    ]
+}
+```
+
+# AST for `car.factory('white', 'Kia', 'Sorento', 2010, 50000, null, true)`
+
+```js
+ {
+    "type": "ExpressionStatement",
+    "expression": {
+    "type": "CallExpression",
+    "callee": {
+        "type": "MemberExpression",
+        "computed": false,
+        "object": {
+        "type": "Identifier",
+        "name": "car",
+        "range": [
+            0,
+            3
+        ]
+        },
+        "property": {
+        "type": "Identifier",
+        "name": "factory",
+        "range": [
+            4,
+            11
+        ]
+        },
+        "range": [
+        0,
+        11
+        ]
+    },
+    "arguments": [
+        {
+        "type": "Literal",
+        "value": "white",
+        "raw": "'white'",
+        "range": [
+            12,
+            19
+        ]
+        },
+        {
+        "type": "Literal",
+        "value": "Kia",
+        "raw": "'Kia'",
+        "range": [
+            21,
+            26
+        ]
+        },
+        {
+        "type": "Literal",
+        "value": "Sorento",
+        "raw": "'Sorento'",
+        "range": [
+            28,
+            37
+        ]
+        },
+        {
+        "type": "Literal",
+        "value": 2010,
+        "raw": "2010",
+        "range": [
+            39,
+            43
+        ]
+        },
+        {
+        "type": "Literal",
+        "value": 50000,
+        "raw": "50000",
+        "range": [
+            45,
+            50
+        ]
+        },
+        {
+        "type": "Literal",
+        "value": null,
+        "raw": "null",
+        "range": [
+            52,
+            56
+        ]
+        },
+        {
+        "type": "Literal",
+        "value": true,
+        "raw": "true",
+        "range": [
+            58,
+            62
+        ]
+        }
+    ],
+    "range": [
+        0,
+        63
+    ]
+    },
+    "range": [
+    0,
+    63
+    ]
 }
 ```
