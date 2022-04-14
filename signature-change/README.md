@@ -7,12 +7,17 @@ In this scenario, we’ve got a method signature that’s gotten out of control 
 Instead of 
 
 ```js
-car.factory('white', 'Kia', 'Sorento', 2010, 50000, null, true);
+import car from 'car';
+
+const suv = car.factory('white', 'Kia', 'Sorento', 2010, 50000, null, true);
+const truck = car.factory('silver', 'Toyota', 'Tacoma', 2006, 100000, true, true);
 ```
 
 we’d like to see
 
 ```js
+import car from 'car';
+
 const suv = car.factory({
   color: 'white',
   make: 'Kia',
@@ -20,6 +25,15 @@ const suv = car.factory({
   year: 2010,
   miles: 50000,
   bedliner: null,
+  alarm: true,
+});
+const truck = car.factory({
+  color: 'silver',
+  make: 'Toyota',
+  model: 'Tacoma',
+  year: 2006,
+  miles: 100000,
+  bedliner: true,
   alarm: true,
 });
 ```
