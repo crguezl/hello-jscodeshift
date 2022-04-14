@@ -261,15 +261,7 @@ Time elapsed: 0.912seconds
 The AST for the expression:
 
 ```js
-({
-  color: 'white',
-  make: 'Kia',
-  model: 'Sorento',
-  year: 2010,
-  miles: 50000,
-  bedliner: null,
-  alarm: true,
-})
+({ color: 'white',  make: 'Kia', model: 'Sorento', year: 2010, miles: 50000, bedliner: null, alarm: true, })
 ```
 
 is: 
