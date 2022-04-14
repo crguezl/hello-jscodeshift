@@ -5,6 +5,9 @@ module.exports = function (fileInfo, api, options) {
   debugger;
   console.log("**********************fileInfo**************************");
   describe(fileInfo);
+  console.log("**********************options**************************");
+  describe(options);
+
   let j = api.jscodeshift;
   let jscColl = j(fileInfo.source);
   console.log("************* jscColl = j(fileInfo.source) *****************");
