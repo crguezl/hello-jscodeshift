@@ -93,7 +93,7 @@ Time elapsed: 0.912seconds
 2. Find all call sites to the `.factory` method
 
    ```js
-   root.find(j.CallExpression, {
+   let factoryCalls = root.find(j.CallExpression, {
         callee: {
           type: 'MemberExpression',
           object: {
