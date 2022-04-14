@@ -40,7 +40,9 @@ async function main(fileInfo, api, options) {
 
   let final = removed.toSource(); // Convert the AST to source code
   console.log("************* final = removed.toSource() *****************");
-  await describeAndPause(final);
+  describe(final);
+  process.stdin.pause();
+  // Pauses the incoming 'data' events.
   return final;
 };
 
