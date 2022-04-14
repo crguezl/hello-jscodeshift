@@ -486,3 +486,36 @@ is:
         ]
       }
 ```
+
+## Rajasegar AST-Builder
+
+For the input:
+
+```js
+suv = car.factory({
+  color: 'white',
+  make: 'Kia',
+  model: 'Sorento',
+  year: 2010,
+  miles: 50000,
+  bedliner: null,
+  alarm: true,
+})
+```
+
+Rajasegar aST builder gives us this ast-type builder expression:
+
+```js
+j.expressionStatement(j.assignmentExpression("=", j.identifier("suv"), j.callExpression(
+  j.memberExpression(j.identifier("car"), j.identifier("factory"), false),
+  [j.objectExpression([
+    j.property("init", j.identifier("color"), j.literal("white")),
+    j.property("init", j.identifier("make"), j.literal("Kia")),
+    j.property("init", j.identifier("model"), j.literal("Sorento")),
+    j.property("init", j.identifier("year"), j.literal(2010)),
+    j.property("init", j.identifier("miles"), j.literal(50000)),
+    j.property("init", j.identifier("bedliner"), j.literal(null)),
+    j.property("init", j.identifier("alarm"), j.literal(true))
+  ])]
+)));
+```
