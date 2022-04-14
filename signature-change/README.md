@@ -23,3 +23,44 @@ const suv = car.factory({
   alarm: true,
 });
 ```
+
+## Run 
+
+```js
+signature-change git:(master) ✗ npm run signature
+
+> jscodeshift-learning@1.0.0 signature
+> jscodeshift -t signature-change/signature-change.js signature-change/signature-change-input.js -d -p
+
+Processing 1 files... 
+Spawning 1 workers...
+Running in dry mode, no files will be written! 
+Sending 1 files to free worker...
+import car from 'car';
+
+const suv = car.factory({
+  color: 'white',
+  make: 'Kia',
+  model: 'Sorento',
+  year: 2010,
+  miles: 50000,
+  bedliner: null,
+  alarm: true,
+});
+const truck = car.factory({
+  color: 'silver',
+  make: 'Toyota',
+  model: 'Tacoma',
+  year: 2006,
+  miles: 100000,
+  bedliner: true,
+  alarm: true,
+});
+All done. 
+Results: 
+0 errors
+0 unmodified
+0 skipped
+1 ok
+Time elapsed: 0.912seconds
+```
