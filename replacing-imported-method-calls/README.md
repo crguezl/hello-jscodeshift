@@ -42,3 +42,57 @@ Time elapsed: 0.921seconds
 ```
 
 or simply `jscodeshift -t deprecated.js deprecated-input.js -d -p`
+
+## AST of an import Declaration
+
+This is the AST for the import declaration `import g from 'geometry';`
+
+```js
+{
+  "type": "Program",
+  "start": 0,
+  "end": 25,
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "start": 0,
+      "end": 25,
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 7,
+          "end": 8,
+          "local": {
+            "type": "Identifier",
+            "start": 7,
+            "end": 8,
+            "name": "g"
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "start": 14,
+        "end": 24,
+        "value": "geometry",
+        "raw": "'geometry'"
+      }
+    }
+  ],
+  "sourceType": "module"
+}
+```
+
+## replaceswith method
+
+<https://github.com/facebook/jscodeshift/wiki/jscodeshift-Documentation#replacewith>
+
+Simply replaces the selected nodes with the provided node. If a function is provided it is executed for every node and the node is replaced with the functions return value.
+
+## get
+
+get in collections simply proxies to `NodePath#get` of the first path.
+
+get for NodePath gives the first NodePath from the Collection.
+ 
+Child NodePath objects are created lazily, by calling the `.get` method of a parent NodePath object

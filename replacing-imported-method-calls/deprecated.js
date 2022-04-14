@@ -17,7 +17,7 @@ export default (fileInfo, api) => {
     // get the Node in the NodePath and grab its "name"
     importDeclaration
       .find(j.Identifier)
-      // get the first NodePath from the Collection
+      // get the first NodePath from the Collection. Child NodePath objects are created lazily, by calling the .get method of a parent NodePath object
       .get(0).node.name;
 
   return root
