@@ -3,7 +3,7 @@
 const path = require('path');
 const { run: jscodeshift } = require("jscodeshift/src/Runner");
 
-const transformPath = path.join(__dirname, "hi-jscodeshift.js");
+const transformPath = path.join(__dirname, "hi-j-registermethods.js");
 const paths = ["foo.js"];
 const options = {
   dry: true, // dry run (no changes are made to files)
