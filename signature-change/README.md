@@ -106,14 +106,12 @@ Time elapsed: 0.912seconds
       })
    ```
 3. Read all arguments being passed in
-   * For all `nodepath` in the collection `factoryCalls` the corresponding AST node in `nodepath.node` has the arguments of the call in its `arguments` property 
+   * For all `nodepath` in the collection `factoryCalls` the corresponding AST `node` in `nodepath.node` has the arguments of the call in its `arguments` property 
 4. Replace that call with a single argument which contains an object with the original values
-   * We have to build the AST for an `objectExpression`
+   * We have to build the AST for an `objectExpression`. Assuming `node` is `nodepath.node` and `argKeys` is a constant with the names of the object keys:
 
      ```js
      const argumentsAsObject = j.objectExpression(
-  
-          // map the arguments to an Array of Property Nodes
           node.arguments.map((arg, i) =>
             j.property(
               'init',
