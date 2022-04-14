@@ -7,7 +7,12 @@ For this scenario, we’ve got a `geometry` module with a method named `circleAr
 
 ```js
 import g from 'geometry';
+import otherModule from 'otherModule';
+const radius = 20;
 const area = g.circleArea(radius);
+
+console.log(area === Math.pow(g.getPi(), 2) * radius);
+console.log(area === otherModule.circleArea(radius));
 ```
 
 How would we know to replace `g.circleArea` instead of `geometry.circleArea`? 
@@ -94,5 +99,5 @@ Simply replaces the selected nodes with the provided node. If a function is prov
 get in collections simply proxies to `NodePath#get` of the first path.
 
 get for NodePath gives the first NodePath from the Collection.
- 
+
 Child NodePath objects are created lazily, by calling the `.get` method of a parent NodePath object
