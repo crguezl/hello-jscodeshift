@@ -121,7 +121,8 @@ Time elapsed: 0.912seconds
           )
         );
     ```
-   Try Rajasegar [ast-builder](https://rajasegar.github.io/ast-builder/) website to play on how to build this expression using ast-types builders.
+
+Try Rajasegar [ast-builder](https://rajasegar.github.io/ast-builder/) website to play on how to build this expression using ast-types builders.
 
 ## AST `import car from 'car';`
 
@@ -503,7 +504,7 @@ suv = car.factory({
 })
 ```
 
-Rajasegar aST builder gives us this ast-type builder expression:
+Rajasegar AST builder gives us this ast-type builder expression:
 
 ```js
 j.expressionStatement(j.assignmentExpression("=", j.identifier("suv"), j.callExpression(
