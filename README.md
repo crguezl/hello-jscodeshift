@@ -7,5 +7,8 @@ A repo with jscodeshift examples
   * <https://ull-esit-gradoii-pl.github.io/temas/tree-transformations/jscodeshift.html#how-to-write-the-transformation-module>
   * <https://ull-esit-gradoii-pl.github.io/temas/tree-transformations/jscodeshift.html#usage-from-js-source>
   * <https://ull-esit-gradoii-pl.github.io/temas/tree-transformations/tree-transformations-references.html>
+
+
 * <https://www.toptal.com/javascript/write-code-to-rewrite-your-code>
+
 * Also <https://github.com/jhgg/js-transforms.git>

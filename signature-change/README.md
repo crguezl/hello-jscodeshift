@@ -78,3 +78,80 @@ Results:
 1 ok
 Time elapsed: 0.912seconds
 ```
+
+## Steps
+
+1. Find the local name for the imported module
+
+   ```js
+    const importDeclaration = root.find(j.ImportDeclaration, {
+      source: { type: 'Literal', value: 'car', },
+    });
+
+    const localName = importDeclaration.find(j.Identifier).get(0).node.name;
+   ```
+2. Find all call sites to the `.factory` method
+
+   ```js
+   root.find(j.CallExpression, {
+        callee: {
+          type: 'MemberExpression',
+          object: {
+            name: localName,
+          },
+          property: {
+            name: 'factory',
+          },
+        }
+      })
+   ```
+3. Read all arguments being passed in
+4. Replace that call with a single argument which contains an object with the original values
+
+## AST `import car from 'car';`
+
+```js
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "car",
+            "range": [
+              7,
+              10
+            ]
+          },
+          "range": [
+            7,
+            10
+          ]
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "car",
+        "raw": "'car'",
+        "range": [
+          16,
+          21
+        ]
+      },
+      "range": [
+        0,
+        22
+      ]
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    0,
+    22
+  ]
+}
+```
