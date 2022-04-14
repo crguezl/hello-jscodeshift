@@ -108,7 +108,7 @@ Time elapsed: 0.912seconds
 3. Read all arguments being passed in
    * For all `nodepath` in the collection `factoryCalls` the corresponding AST node in `nodepath.node` has the arguments of the call in its `arguments` property 
 4. Replace that call with a single argument which contains an object with the original values
-   * We have to build the AST for the object
+   * We have to build the AST for an `objectExpression`
 
 ## AST `import car from 'car';`
 
@@ -254,4 +254,230 @@ Time elapsed: 0.912seconds
     63
     ]
 }
+```
+
+## AST for an ObjectExpression
+
+The AST for the expression:
+
+```js
+({
+  color: 'white',
+  make: 'Kia',
+  model: 'Sorento',
+  year: 2010,
+  miles: 50000,
+  bedliner: null,
+  alarm: true,
+})
+```
+
+is: 
+
+```js
+{
+        "type": "ObjectExpression",
+        "properties": [
+          {
+            "type": "Property",
+            "key": {
+              "type": "Identifier",
+              "name": "color",
+              "range": [
+                5,
+                10
+              ]
+            },
+            "computed": false,
+            "value": {
+              "type": "Literal",
+              "value": "white",
+              "raw": "'white'",
+              "range": [
+                12,
+                19
+              ]
+            },
+            "kind": "init",
+            "method": false,
+            "shorthand": false,
+            "range": [
+              5,
+              19
+            ]
+          },
+          {
+            "type": "Property",
+            "key": {
+              "type": "Identifier",
+              "name": "make",
+              "range": [
+                23,
+                27
+              ]
+            },
+            "computed": false,
+            "value": {
+              "type": "Literal",
+              "value": "Kia",
+              "raw": "'Kia'",
+              "range": [
+                29,
+                34
+              ]
+            },
+            "kind": "init",
+            "method": false,
+            "shorthand": false,
+            "range": [
+              23,
+              34
+            ]
+          },
+          {
+            "type": "Property",
+            "key": {
+              "type": "Identifier",
+              "name": "model",
+              "range": [
+                38,
+                43
+              ]
+            },
+            "computed": false,
+            "value": {
+              "type": "Literal",
+              "value": "Sorento",
+              "raw": "'Sorento'",
+              "range": [
+                45,
+                54
+              ]
+            },
+            "kind": "init",
+            "method": false,
+            "shorthand": false,
+            "range": [
+              38,
+              54
+            ]
+          },
+          {
+            "type": "Property",
+            "key": {
+              "type": "Identifier",
+              "name": "year",
+              "range": [
+                58,
+                62
+              ]
+            },
+            "computed": false,
+            "value": {
+              "type": "Literal",
+              "value": 2010,
+              "raw": "2010",
+              "range": [
+                64,
+                68
+              ]
+            },
+            "kind": "init",
+            "method": false,
+            "shorthand": false,
+            "range": [
+              58,
+              68
+            ]
+          },
+          {
+            "type": "Property",
+            "key": {
+              "type": "Identifier",
+              "name": "miles",
+              "range": [
+                72,
+                77
+              ]
+            },
+            "computed": false,
+            "value": {
+              "type": "Literal",
+              "value": 50000,
+              "raw": "50000",
+              "range": [
+                79,
+                84
+              ]
+            },
+            "kind": "init",
+            "method": false,
+            "shorthand": false,
+            "range": [
+              72,
+              84
+            ]
+          },
+          {
+            "type": "Property",
+            "key": {
+              "type": "Identifier",
+              "name": "bedliner",
+              "range": [
+                88,
+                96
+              ]
+            },
+            "computed": false,
+            "value": {
+              "type": "Literal",
+              "value": null,
+              "raw": "null",
+              "range": [
+                98,
+                102
+              ]
+            },
+            "kind": "init",
+            "method": false,
+            "shorthand": false,
+            "range": [
+              88,
+              102
+            ]
+          },
+          {
+            "type": "Property",
+            "key": {
+              "type": "Identifier",
+              "name": "alarm",
+              "range": [
+                106,
+                111
+              ]
+            },
+            "computed": false,
+            "value": {
+              "type": "Literal",
+              "value": true,
+              "raw": "true",
+              "range": [
+                113,
+                117
+              ]
+            },
+            "kind": "init",
+            "method": false,
+            "shorthand": false,
+            "range": [
+              106,
+              117
+            ]
+          }
+        ],
+        "range": [
+          1,
+          120
+        ]
+      }
 ```
