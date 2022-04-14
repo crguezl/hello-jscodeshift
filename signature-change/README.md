@@ -110,7 +110,7 @@ Time elapsed: 0.912seconds
 4. Replace that call with a single argument which contains an object with the original values
    * We have to build the AST for an `objectExpression`. Assuming `node` is `nodepath.node` and `argKeys` is a constant with the names of the object keys:
 
-     ```js
+    ```js
      const argumentsAsObject = j.objectExpression(
           node.arguments.map((arg, i) =>
             j.property(
