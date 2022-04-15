@@ -1,9 +1,7 @@
+function bar() {
+  return 42;
+}
+
+var baz = {};
+
 import "get-outta-here";
-
-(function foo() {
-    function bar() {
-      return 42;
-    }
-
-    var baz = {};
-})();
