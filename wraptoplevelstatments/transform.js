@@ -20,7 +20,10 @@ export default function transformer(file, api, options) {
   );
 
   const imports = root.find(j.ImportDeclaration);
-  const nodes = imports.nodes();
+  const importNodes = imports.nodes();
   imports.remove();
-  return wrapper.find(j.Statement).at(0).insertBefore(nodes).toSource();
+  return wrapper
+            .find(j.Statement).at(0)   // get the first statement
+            .insertBefore(importNodes) // insert the imports before the first statement
+            .toSource();
 }
