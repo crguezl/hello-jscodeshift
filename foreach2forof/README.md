@@ -1,0 +1,1 @@
+See <https://stackoverflow.com/questions/70311796/jscodeshift-convert-foreach-to-for-loop>

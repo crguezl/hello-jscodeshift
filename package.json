@@ -19,6 +19,7 @@
   "author": "Casiano Rodriguez Leon <crguezl@ull.edu.es> (https://crguezl.github.io/)",
   "license": "ISC",
   "dependencies": {
+    "escodegen": "^2.0.0",
     "jscodeshift": "^0.13.1",
     "recast": "^0.20.5"
   },
