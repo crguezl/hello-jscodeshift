@@ -1,6 +1,9 @@
-import 'get-outta-here';
+import "get-outta-here";
 
-function wrap() {
-  function bar() {return 42;}
-  var baz = {}
-}();
+(function mainProgram() {
+    function bar() {
+      return 42;
+    }
+
+    var baz = {};
+})();
