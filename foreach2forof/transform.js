@@ -4,7 +4,7 @@ module.exports = function(fileInfo, api) {
     const j = api.jscodeshift;
     const root = j(fileInfo.source);
 
-    root.find(j.CallExpression, {
+    let result = root.find(j.CallExpression, {
         callee : {
             property : {
                 name : "forEach"
@@ -33,4 +33,6 @@ module.exports = function(fileInfo, api) {
         return newNode;
     })
     .toSource();
+
+    return result;
 }
