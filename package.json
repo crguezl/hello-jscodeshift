@@ -11,7 +11,9 @@
     "deprecated": "jscodeshift -t replacing-imported-method-calls/deprecated.js replacing-imported-method-calls/deprecated-input.js -d -p",
     "signature": "jscodeshift -t signature-change/signature-change.js signature-change/signature-change-input.js -d -p",
     "arrow": "jscodeshift -d -t function-expression-to-arrow-expression/function-expression-to-arrow-function-expression.js function-expression-to-arrow-expression/function-expression-to-arrow-function-expression-input.js -d -p",
-    "foreach2forof": "git restore foreach2forof/*.js; jscodeshift  -t foreach2forof/transform.js foreach2forof/input*.js -p"
+    "foreach2forof": "git restore foreach2forof/input*.js; jscodeshift  -t foreach2forof/transform.js foreach2forof/input*.js -p",
+    "wraptop": "git restore wraptoplevelstatments/input*.js; jscodeshift  -t wraptoplevelstatments/transform.js wraptoplevelstatments/input*.js -p"
+
   },
   "keywords": [
     "ull",
