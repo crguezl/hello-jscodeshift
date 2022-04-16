@@ -4,7 +4,9 @@ const path = require('path');
 const { run: jscodeshift } = require("jscodeshift/src/Runner");
 
 const transformPath = path.join(__dirname, "transform.js");
-const paths = ["__testfixtures__/transform.input.js", "input2.js"];
+const paths = [
+  "__testfixtures__/function-declaration.input.js", 
+  "__testfixtures__/function-expression.input.js"];
 const options = {
   dry: true, // dry run (no changes are made to files)
   print: true, // print transformed files to stdout, useful for development

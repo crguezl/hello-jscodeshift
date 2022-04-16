@@ -13,3 +13,9 @@ node --inspect-brk ./use-prefix-functions.js
 ```
 
 if you want to use the debugger.
+
+To run the tests:
+
+```
+npx jest __tests__/test.js
+```
