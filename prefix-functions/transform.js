@@ -3,23 +3,22 @@ module.exports = function(file, api) {
 
   debugger;
 
-  let hello = j.expressionStatement(
+  let enteringT = (name) => j.expressionStatement(
       j.callExpression(
          j.memberExpression(
              j.identifier("console"), 
              j.identifier("log"), 
          false),
-        [j.literal("hello")]
+        [j.literal(`Entering function '${name}'`)]
     ) // end of callExpression
   );
 
-  let fdt = (name, params, body) => j.functionDeclaration(
+  let funDecT = (name, params, body) => j.functionDeclaration(
         j.identifier(name), params,  body,
         false, false, false
     );
 
-  let fet = (params, body) => j.functionExpression(null, params, body, false, false, false);
-
+  let funExpT = (params, body) => j.functionExpression(null, params, body, false, false, false);
         
   return j(file.source)
          .find(j.Function).replaceWith(p => {
@@ -28,12 +27,9 @@ module.exports = function(file, api) {
             let name = node.id && node.id.name;
             let params = node.params;
             let body = node.body.body;
-            let newBody = j.blockStatement([hello].concat(body))
-            let newNode = name? fdt(name, params, newBody) 
-            : fet(params, newBody);
-
-            //console.log(newNode);
+            let newBody = j.blockStatement([enteringT(name || "anonymous")].concat(body));
+            let newNode = name? funDecT(name, params, newBody) : funExpT(params, newBody)
+            
             return newNode;
          }).toSource();
- 
 }

@@ -1,0 +1,1 @@
+Inserts a console.log("hello) statement at the beginning of each function body.
