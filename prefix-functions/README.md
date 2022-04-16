@@ -1,1 +1,15 @@
-Inserts a console.log("hello) statement at the beginning of each function body.
+Inserts a `console.log("...")` statement at the beginning of each function body.
+
+Run it with:
+
+```js
+node ./use-prefix-functions.js
+```
+
+or
+
+```js
+node --inspect-brk ./use-prefix-functions.js
+```
+
+if you want to use the debugger.
