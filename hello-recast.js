@@ -1,13 +1,11 @@
 const recast = require("recast");
-const code = `
-  function add(a, b) { return a * b; }
-`
+const code = `function add(a, b) { return a * b; }`
 ;
 
 // Let us transform the order of the parameters and convert it in a functionExpression
 
 // Parse the code using an interface similar to require("esprima").parse.
-const ast = recast.parse(code);
+const ast = recast.parse(code, {  parser: require("espree")});
 const add = ast.program.body[0];
 
 // Notice how it is pretty printed back to the original code.

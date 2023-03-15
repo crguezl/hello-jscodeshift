@@ -13,7 +13,6 @@
     "arrow": "jscodeshift -d -t function-expression-to-arrow-expression/function-expression-to-arrow-function-expression.js function-expression-to-arrow-expression/function-expression-to-arrow-function-expression-input.js -d -p",
     "foreach2forof": "git restore foreach2forof/input*.js; jscodeshift  -t foreach2forof/transform.js foreach2forof/input*.js -p",
     "wraptop": "git restore wraptoplevelstatments/input*.js; jscodeshift -d -p -t wraptoplevelstatments/transform.js wraptoplevelstatments/input*.js --main mainProgram"
-
   },
   "keywords": [
     "ull",
@@ -23,6 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "escodegen": "^2.0.0",
+    "espree": "^9.5.0",
     "jscodeshift": "^0.13.1",
     "recast": "^0.20.5"
   },
