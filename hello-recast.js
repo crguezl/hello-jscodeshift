@@ -11,7 +11,7 @@ const ast = recast.parse(code);
 const add = ast.program.body[0];
 
 // Notice how it is pretty printed back to the original code.
-console.log(`input code:\n${recast.prettyPrint(ast)}`);
+console.log(`input code:\n${recast.prettyPrint(ast, { tabWidth: 2 }).code}`);
 
 debugger;
 
