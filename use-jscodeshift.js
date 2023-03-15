@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const path = require('path');
 const { run: jscodeshift } = require("jscodeshift/src/Runner");
 
@@ -19,7 +18,6 @@ async function run() {
 }
 
 run();
-
 
 // ✗ node use-jscodeshift.js
 // Processing 2 files... 
@@ -50,4 +48,3 @@ run();
 //   nochange: 0,
 //   skip: 0
 // }
-
